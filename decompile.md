@@ -6,8 +6,6 @@ Compiles to `.pyc`
     - python3: `uncompyle3` found [here](https://github.com/rocky/python-decompile3)
 
 # Java
-
-## Class
 `.class` file
 
 Decompile online with [javadecompilers.com](http://www.javadecompilers.com/) or locally
