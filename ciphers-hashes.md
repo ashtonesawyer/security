@@ -144,6 +144,10 @@ Convert to ASCII
 Output: KRYG
 ```
 
+## Small e Attack
+When e is small (m^e < N) then you can decrypt using `m = c^(1/e)`. If it's not quite that small, then
+you can progressively add multiples of `n` until there's a valid answer: `m = (c + know)^(1/e)`
+
 # NTLM (Windows) Passwords
 Can crack with rainbow tables in `ophcrack`
 
