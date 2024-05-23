@@ -1,3 +1,17 @@
+- [Caesar Box Cipher](#caesar-box-cipher)
+- [Rail Fence Cipher](#rail-fence-cipher)
+  - [Encoding](#rf-encoding)
+  - [Decoding](#rf-decoding)
+- [Vigenere Cipher](#vigenere-cipher)
+  - [Encoding](#v-encoding)
+  - [Decoding](#v-decoding)
+- [RSA](#rsa)
+  - [Encoding](#rsa-encoding)
+  - [Decoding](#rsa-decoding)
+    - [Small e Attack](#small-e-attack)
+- [NTLM](#ntlm-windows-passwords)
+
+
 # Caesar Box Cipher
 [Online Decoding](https://www.dcode.fr/caesar-box-cipher)
 
@@ -6,7 +20,7 @@ Also called zigzag
 
 [Online Decoding](https://www.dcode.fr/rail-fence-cipher)
 
-## Encoding
+## RF Encoding
 ```
 Input: Example123, 3 levels, no offset
 
@@ -17,7 +31,7 @@ Input: Example123, 3 levels, no offset
 Output: Ep2xml13ae
 ```
 
-## Decoding
+## RF Decoding
 Need to know the number of levels
 
 ```
@@ -45,7 +59,7 @@ Requires an alphabet and a key
 
 [Online Decoding](https://www.dcode.fr/vigenere-cipher)
 
-## Encoding
+## V Encoding
 Add the first letter of the plaintext and the first letter of the key and add their values
 together (A = 0, B = 1, etc.). The value of the output is the letter in the output. Continue
 with the next letter of the plaintext and key. If the key is shorter than the plaintext,
@@ -68,7 +82,7 @@ E = 4  ^ Z = 25 -> Out = 29 % 26 = 3  = D
 Output = Eycpmjd123
 ```
 
-## Decoding
+## V Decoding
 Subtract the first letter of the key from the first letter of the cipher. If the result
 is negative, add the number of letters in the alphabet. If you get to the end of the key,
 go back to the beginning.
@@ -100,7 +114,7 @@ Output = Example123
 4. The public key is generated from `n` and `e`
 5. The private key is generated from `d`, `p`, and `q`
 
-# Encoding
+## RSA Encoding
 Convert the plaintext into an integer `m`. The output `c = m^e % n`
 
 ```
@@ -121,7 +135,7 @@ c_3 = 89^43 % 1079 = 379
 Output: 996 894 379
 ```
 
-## Decoding
+## RSA Decoding
 The amount of needed information depends on the security of the selected primes. If `p`, `q`
 are sufficiently small then you may only need some of the information. 
 `m = c^d % n`
@@ -144,7 +158,7 @@ Convert to ASCII
 Output: KRYG
 ```
 
-## Small e Attack
+### Small e Attack
 When e is small (m^e < N) then you can decrypt using `m = c^(1/e)`. If it's not quite that small, then
 you can progressively add multiples of `n` until there's a valid answer: `m = (c + know)^(1/e)`
 
