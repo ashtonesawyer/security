@@ -44,7 +44,7 @@ breath-of-the-wild: , 1st region INVALID
 00000020: 6e00 6400 6f00 7700 7300 2000 3100 3000  n.d.o.w.s. .1.0.
 00000030: 2e00 3000 2e00 3200 3200 3600 3300 3100  ..0...2.2.6.3.1.
 
- $ mv breath-of-the-wild breath-of-the-wild-vhdx
+ $ mv breath-of-the-wild breath-of-the-wild.vhdx
 ```
 
 # Examining the drive
