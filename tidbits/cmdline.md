@@ -98,3 +98,8 @@ Example:
 192.168.0.188
 192.168.0.227
 ```
+
+To add a set of numbers:
+```
+awk '{s+=$1} END {printf "%.0f\n", s}'
+```
